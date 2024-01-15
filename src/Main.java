@@ -20,6 +20,7 @@ public class Main {
 			}
 			System.out.println(playerMove + " is not a valid move.");
 		}
+		
 		System.out.println("Computer player: " + computerMove);
 		if (playerMove.equals(computerMove)) {
 			System.out.println("The game was a tie");
