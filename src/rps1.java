@@ -7,40 +7,39 @@ public class rps1 {
 		// TODO Auto-generated method stub
 		
 		String[] rps = {"r", "p", "s"};
-		String computerMove = rps[new Random().nextInt(rps.length)];
+		String computerChoice = rps[new Random().nextInt(rps.length)];
 		
 		Scanner scanner = new Scanner(System.in);
-		String playerMove;
+		String playerChoice;
 		
 		while(true) {
-			System.out.println("Rock - r, paper - p or scissor - s?");
-			playerMove = scanner.nextLine();
-			if (playerMove.equals("r") || playerMove.equals("p") || playerMove.equals("s")) {
+			System.out.println("Rock paper or scissor?");
+			playerChoice = scanner.nextLine();
+			if(playerChoice.equals("r")|| playerChoice.equals("s") || playerChoice.equals("p")) {
 				break;
 			}
-			System.out.println(playerMove + " is not valid");
+			System.out.println("invalid entry. Please try again.");
+		}
+		System.out.println("Computer choice is: " + computerChoice);
+		if(playerChoice.equals(computerChoice)) {
+			System.out.println("Tie. Try again.");
+		}
+		if(playerChoice.equals("r") && playerChoice.equals("s")){
+			System.out.println("Player wins.");
+		}else if(playerChoice.equals("s") && playerChoice.equals("r")) {
+			System.out.println("Player loses.");
+		}
+		if(playerChoice.equals("r") && playerChoice.equals("p")){
+			System.out.println("Player loses.");
+		}else if(playerChoice.equals("p") && playerChoice.equals("r")) {
+			System.out.println("Player wins.");
+		}
+		if(playerChoice.equals("p") && playerChoice.equals("s")){
+			System.out.println("Player loses.");
+		}else if(playerChoice.equals("s") && playerChoice.equals("p")) {
+			System.out.println("Player wins.");
 		}
 		
-		System.out.println("Computer player: " + computerMove);
-		
-		if (playerMove.equals(computerMove)) {
-			System.out.println("We have a tie breaker, play again.");
-		}
-		if (playerMove.equals("r") && computerMove.equals("s")) {
-			System.out.println("Player wins.");
-		}else if(playerMove.equals("s") && computerMove.equals("r")) {
-			System.out.println("Player loses.");
-		}
-		if (playerMove.equals("r") && computerMove.equals("p")) {
-			System.out.println("Player loses.");
-		}else if(playerMove.equals("p") && computerMove.equals("r")) {
-			System.out.println("Player wins.");
-		}
-		if (playerMove.equals("p") && computerMove.equals("s")) {
-			System.out.println("Player loses.");
-		}else if(playerMove.equals("s") && computerMove.equals("p")) {
-			System.out.println("Player wins.");
-		}
 		
 		
 	}
